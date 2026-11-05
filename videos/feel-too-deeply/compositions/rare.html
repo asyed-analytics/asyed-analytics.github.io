@@ -8,20 +8,24 @@
     #rare-lead { top: 1000px; font: 400 58px/1.05 var(--font-lead); color: var(--white); }
     #rare-punch { top: 1080px; font: 400 96px/0.95 var(--font-serif); color: var(--lemon); }
     .rw { opacity: 0; }
+    #rare-wrap { position: absolute; inset: 0; }
   </style>
   <div id="root" data-composition-id="rare" data-width="1080" data-height="1920">
+    <div id="rare-wrap">
     <svg id="rare-heart" viewBox="0 0 100 92" aria-hidden="true"><path id="rare-path" d="M50 86 C 18 62, 4 44, 4 26 C 4 12, 15 4, 28 4 C 38 4, 46 10, 50 20 C 54 10, 62 4, 72 4 C 85 4, 96 12, 96 26 C 96 44, 82 62, 50 86 Z" fill="none" stroke="#F8E31A" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="butt" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg>
     <div id="rare-lead" class="rl"><span id="rare-w27" class="rw">is</span> <span id="rare-w28" class="rw">very,</span> <span id="rare-w29" class="rw">very</span></div>
     <div id="rare-punch" class="rl"><span id="rare-w30" class="rw">rare</span> <span id="rare-w31" class="rw">nowadays.</span></div>
+    </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#rare-path", { attr: { "stroke-dashoffset": 100 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.inOut" }, 0.05);
-    tl.set("#rare-w27", { opacity: 1 }, 0.092);
+    tl.fromTo("#rare-path", { attr: { "stroke-dashoffset": 90 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.65, ease: "power2.out" }, 0);
+    tl.set("#rare-w27", { opacity: 1 }, 0.110);
     tl.set("#rare-w28", { opacity: 1 }, 0.265);
     tl.set("#rare-w29", { opacity: 1 }, 1.109);
-    tl.set("#rare-w30", { opacity: 1 }, 1.604);
+    tl.set("#rare-w30", { opacity: 1 }, 1.374);
     tl.set("#rare-w31", { opacity: 1 }, 1.934);
+    tl.fromTo("#rare-wrap", { scale: 1 }, { scale: 1.05, duration: 2.767, ease: "none" }, 0);
     window.__timelines["rare"] = tl;
   </script>
 </template>

@@ -4,16 +4,20 @@
     #root { position: absolute; inset: 0; background: #000000; --white: #FFFFFF; --lemon: #F8E31A; --black: #000000; --card: #0E0E0D;
       --font-lead: "Poppins", sans-serif; --font-serif: "DM Serif Display", serif; }
     .el { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; opacity: 0; }
+    #end-wrap { position: absolute; inset: 0; }
     #end-lead { top: 860px; font: 400 58px/1.05 var(--font-lead); color: var(--white); }
     #end-punch { top: 944px; font: 400 92px/0.95 var(--font-serif); color: var(--lemon); }
   </style>
   <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
-    <div id="end-lead" class="el">send this to someone</div>
-    <div id="end-punch" class="el">who feels too deeply.</div>
+    <div id="end-wrap">
+      <div id="end-lead" class="el">send this to someone</div>
+      <div id="end-punch" class="el">who feels too deeply.</div>
+    </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.set("#end-lead", { opacity: 1 }, 0.10);
+    tl.set("#end-lead", { opacity: 1 }, 0);
+    tl.fromTo("#end-wrap", { scale: 1 }, { scale: 1.05, duration: 2.400, ease: "none" }, 0);
     tl.set("#end-punch", { opacity: 1 }, 0.32);
     window.__timelines["endcard"] = tl;
   </script>
