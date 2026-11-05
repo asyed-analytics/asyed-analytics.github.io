@@ -1,0 +1,16 @@
+{
+  "name": "asyed-analytics-video-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI video editing pipeline: HyperFrames (motion graphics), FFmpeg, Whisper, yt-dlp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asyed-analytics/asyed-analytics.github.io.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "hyperframes": "^0.9.14"
+  }
+}
