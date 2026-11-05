@@ -1,2 +1,10 @@
 node_modules/
 .hyperframes/
+export/
+videos/*/assets/*.mp4
+videos/*/assets/*.mov
+videos/*/assets/*.wav
+videos/*/renders/
+videos/*/.hyperframes/
+videos/*/snaps*/
+videos/*/assets/sfx/*.mp3

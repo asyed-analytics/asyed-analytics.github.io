@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "DM Serif Display"; font-weight: 400; src: url("assets/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; --white: #FFFFFF; --lemon: #F8E31A; --black: #000000; --card: #0E0E0D;
+      --font-lead: "Poppins", sans-serif; --font-serif: "DM Serif Display", serif; }
+    #depth-card { position: absolute; left: 0; right: 0; top: 0; height: 960px;
+      background: radial-gradient(90% 70% at 50% 62%, #0F2A3A 0%, #06131B 55%, #020507 100%); border-bottom: 3px solid rgba(248,227,26,0.5); }
+    #depth-line { position: absolute; left: 96px; width: 888px; top: 186px; height: 3px; background: rgba(255,255,255,0.55); transform-origin: 0% 50%; }
+    #depth-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 960px; overflow: visible; }
+    .dl { position: absolute; white-space: nowrap; opacity: 0; }
+    #depth-l1 { left: 96px; top: 218px; font: 400 54px/1 var(--font-lead); color: var(--white); }
+    #depth-l2 { left: 560px; top: 700px; font: 400 84px/1 var(--font-serif); color: var(--lemon); }
+  </style>
+  <div id="root" data-composition-id="depth" data-width="1080" data-height="1920">
+    <div id="depth-card"></div>
+    <div id="depth-line"></div>
+    <svg id="depth-svg" viewBox="0 0 1080 960" aria-hidden="true">
+      <defs><radialGradient id="depth-glowg"><stop offset="0" stop-color="#F8E31A" stop-opacity="0.55"/><stop offset="1" stop-color="#F8E31A" stop-opacity="0"/></radialGradient></defs>
+      <ellipse id="depth-glow" cx="540" cy="480" rx="120" ry="190" fill="url(#depth-glowg)" opacity="0"/>
+      <circle id="depth-r1" cx="440" cy="480" r="190" fill="none" stroke="#FFFFFF" stroke-width="5" opacity="0"/>
+      <circle id="depth-r2" cx="640" cy="480" r="190" fill="none" stroke="#F8E31A" stroke-width="5" opacity="0"/>
+    </svg>
+    <div id="depth-l1" class="dl">your depth</div>
+    <div id="depth-l2" class="dl">its depth.</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#depth-line", { scaleX: 0 }, { scaleX: 1, duration: 1.385, ease: "none" }, 0.161);
+    tl.fromTo("#depth-r1", { opacity: 0, scale: 0.7, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 1.546);
+    tl.set("#depth-l1", { opacity: 1 }, 1.546);
+    tl.fromTo("#depth-r2", { opacity: 0, x: 300 }, { opacity: 1, x: 300, duration: 0.15 }, 2.186);
+    tl.fromTo("#depth-r2", { x: 300 }, { x: 0, duration: 0.857, ease: "power2.inOut", immediateRender: false }, 2.336);
+    tl.set("#depth-l2", { opacity: 1 }, 3.043);
+    tl.fromTo("#depth-glow", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 3.093);
+    window.__timelines["depth"] = tl;
+  </script>
+</template>

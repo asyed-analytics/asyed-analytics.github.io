@@ -1,0 +1,29 @@
+<template>
+  <style>
+    @font-face { font-family: "DM Serif Display"; font-weight: 400; src: url("assets/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; --white: #FFFFFF; --lemon: #F8E31A; --black: #000000; --card: #0E0E0D;
+      --font-lead: "Poppins", sans-serif; --font-serif: "DM Serif Display", serif; }
+    #see-card { position: absolute; left: 0; right: 0; top: 0; height: 960px;
+      background: radial-gradient(120% 90% at 50% 0%, #1D1D1A 0%, #0E0E0D 70%); border-bottom: 3px solid rgba(248,227,26,0.5); }
+    .col { position: absolute; top: 250px; width: 440px; display: flex; flex-direction: column; gap: 46px; }
+    #see-left { left: 80px; }
+    #see-right { left: 560px; }
+    .hd { font: 400 34px/1 var(--font-lead); letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+    .seew { font: 400 64px/1.1 var(--font-lead); color: var(--white); white-space: nowrap; opacity: 0; }
+    .missw { font: 400 80px/0.98 var(--font-serif); color: var(--lemon); white-space: nowrap; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="see" data-width="1080" data-height="1920">
+    <div id="see-card"></div>
+    <div id="see-left" class="col"><div id="see-h1" class="hd">they see</div><div id="see-a1" class="seew">attention</div><div id="see-a2" class="seew">attachment</div></div>
+    <div id="see-right" class="col"><div id="see-h2" class="hd">they miss</div><div id="see-b1" class="missw">effort</div><div id="see-b2" class="missw">connection</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(["#see-h1", "#see-h2"], { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.1);
+    tl.set("#see-a1", { opacity: 1 }, 2.545);
+    tl.fromTo("#see-b1", { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power2.out" }, 3.665);
+    tl.set("#see-a2", { opacity: 1 }, 4.310);
+    tl.fromTo("#see-b2", { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power2.out" }, 5.538);
+    window.__timelines["see"] = tl;
+  </script>
+</template>
