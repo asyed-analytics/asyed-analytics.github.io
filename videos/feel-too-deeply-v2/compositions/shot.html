@@ -1,0 +1,97 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter Tight"; font-weight: 700; src: url("assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter Tight"; font-weight: 800; src: url("assets/fonts/inter-tight-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; --white: #FFFFFF; --red: #E3263A; --font: "Inter Tight", sans-serif; }
+    .cam { position: absolute; inset: 0; transform-origin: 540px 600px; }
+    .cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #camA { z-index: 1; }
+    #behind-layer { position: absolute; inset: 0; z-index: 2; }
+    #camB { z-index: 3; }
+    #scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 1060px; z-index: 4;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42) 26%, rgba(0,0,0,0.6) 46%, rgba(0,0,0,0.68) 100%); }
+    #front-layer { position: absolute; inset: 0; z-index: 5; }
+    .grp { position: absolute; inset: 0; overflow: visible; }
+    .behind { position: absolute; left: 0; right: 0; top: 190px; text-align: center; white-space: nowrap; transform-origin: 50% 50%;
+      font: 800 176px/0.9 var(--font); letter-spacing: -0.035em; text-transform: lowercase; }
+    .front { position: absolute; inset: 0; perspective: 1100px; transform-origin: 30% 70%; }
+    .line { position: absolute; left: 96px; right: 60px; white-space: nowrap; font-weight: 800; font-family: var(--font); line-height: 0.95;
+      letter-spacing: -0.035em; text-transform: lowercase; text-shadow: 0 4px 22px rgba(0,0,0,0.45); }
+    .bw, .fw { display: inline-block; opacity: 0; position: relative; }
+    .white { color: var(--white); }
+    .red { color: var(--red); }
+    .arc { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
+    .arct { font: 800 84px var(--font); letter-spacing: -2px; fill: #FFFFFF; }
+    .strike { position: absolute; left: -4%; right: -4%; top: 52%; height: 12px; margin-top: -6px; background: var(--white); border-radius: 6px; transform-origin: 0% 50%; }
+  </style>
+  <div id="root" data-composition-id="shot" data-width="1080" data-height="1920">
+    <div id="camA" class="cam"><video id="v-aroll" class="clip" src="assets/aroll-sample.mp4" muted playsinline data-start="0" data-duration="9.3000" data-track-index="0"></video></div>
+    <div id="behind-layer" data-layout-allow-overlap>
+      
+    </div>
+    <div id="scrim" data-layout-ignore></div>
+    <div id="front-layer">
+            <div id="a1-F" class="clip grp" data-start="0.0600" data-duration="0.7380" data-track-index="4"><div id="a1-Fi" class="front"><svg class="arc" viewBox="0 0 1080 1920" aria-hidden="true"><path id="a1-path" d="M 96 1010 Q 540 1215 984 1010" fill="none"/><text class="arct"><textPath id="a1-tp" href="#a1-path" startOffset="44%" text-anchor="middle"><tspan id="a1-t0" fill-opacity="0">to</tspan> <tspan id="a1-t1" fill-opacity="0">those</tspan> <tspan id="a1-t2" fill-opacity="0">of</tspan> <tspan id="a1-t3" fill-opacity="0">you</tspan></textPath></text></svg></div></div>
+      <div id="a2-F" class="clip grp" data-start="0.8000" data-duration="1.8647" data-track-index="4"><div id="a2-Fi" class="front"><div class="line" style="top:1000px; font-size:100px"><span id="a2-w4" class="fw white">who</span> <span id="a2-w5" class="fw white">feel</span></div><div class="line" style="top:1104px; font-size:70px"><span id="a2-w6" class="fw white">too</span></div><div class="line" style="top:1168px; font-size:170px"><span id="a2-w7" class="fw red">deeply,</span></div></div></div>
+      <div id="b-F" class="clip grp" data-start="2.6667" data-duration="0.8333" data-track-index="4"><div id="b-Fi" class="front"><div class="line" style="top:1050px; font-size:236px"><span id="b-w8" class="fw white">listen.</span></div></div></div>
+      <div id="c1-F" class="clip grp" data-start="3.5220" data-duration="2.2380" data-track-index="4"><div id="c1-Fi" class="front"><div class="line" style="top:1040px; font-size:132px"><span id="c1-w9" class="fw white">never</span> <span id="c1-w10" class="fw white">ever</span></div><div class="line" style="top:1182px; font-size:76px"><span id="c1-w11" class="fw white">let</span> <span id="c1-w12" class="fw white">the</span> <span id="c1-w13" class="fw red">world</span></div><div class="line" style="top:1262px; font-size:76px"><span id="c1-w14" class="fw white">tell</span> <span id="c1-w15" class="fw white">you</span></div></div></div>
+      <div id="c2-F" class="clip grp" data-start="5.7620" data-duration="0.9260" data-track-index="4"><div id="c2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="c2-w16" class="fw white">that</span> <span id="c2-w17" class="fw white">it&#x27;s</span> <span id="c2-w18" class="fw white">a</span></div><div class="line" style="top:1112px; font-size:220px"><span id="c2-w19" class="fw red">flaw.<span id='strike' class='strike'></span></span></div></div></div>
+      <div id="d1-F" class="clip grp" data-start="6.6900" data-duration="1.6250" data-track-index="4"><div id="d1-Fi" class="front"><div class="line" style="top:1060px; font-size:76px"><span id="d1-w20" class="fw white">because</span></div><div class="line" style="top:1140px; font-size:112px"><span id="d1-w21" class="fw white">loving</span> <span id="d1-w22" class="fw white">someone</span></div></div></div>
+      <div id="d2-F" class="clip grp" data-start="8.3170" data-duration="0.9810" data-track-index="4"><div id="d2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="d2-w23" class="fw white">with</span> <span id="d2-w24" class="fw white">your</span></div><div class="line" style="top:1114px; font-size:160px"><span id="d2-w25" class="fw white">whole</span> <span id="d2-w26" class="fw red">heart</span></div></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#a1-t0", { attr: { "fill-opacity": 0 } }, { attr: { "fill-opacity": 1 }, duration: 0.12, ease: "power2.out" }, 0.090);
+    tl.fromTo("#a1-t1", { attr: { "fill-opacity": 0 } }, { attr: { "fill-opacity": 1 }, duration: 0.12, ease: "power2.out" }, 0.160);
+    tl.fromTo("#a1-t2", { attr: { "fill-opacity": 0 } }, { attr: { "fill-opacity": 1 }, duration: 0.12, ease: "power2.out" }, 0.360);
+    tl.fromTo("#a1-t3", { attr: { "fill-opacity": 0 } }, { attr: { "fill-opacity": 1 }, duration: 0.12, ease: "power2.out" }, 0.560);
+    tl.fromTo("#a1-tp", { attr: { startOffset: "44%" } }, { attr: { startOffset: "50%" }, duration: 0.738, ease: "expo.out" }, 0.060);
+    tl.fromTo("#a1-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.738, ease: "sine.inOut" }, 0.060);
+    tl.to("#a1-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 0.638);
+    tl.fromTo("#a2-w4", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 0.800);
+    tl.fromTo("#a2-w5", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 1.020);
+    tl.fromTo("#a2-w6", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 1.650);
+    tl.fromTo("#a2-w7", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 1.880);
+    tl.fromTo("#a2-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 1.865, ease: "sine.inOut" }, 0.800);
+    tl.to("#a2-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 2.505);
+    tl.fromTo("#b-w8", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 2.760);
+    tl.fromTo("#b-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.833, ease: "sine.inOut" }, 2.667);
+    tl.to("#b-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 3.340);
+    tl.fromTo("#c1-w9", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 3.522);
+    tl.fromTo("#c1-w10", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 3.982);
+    tl.fromTo("#c1-w11", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 4.522);
+    tl.fromTo("#c1-w12", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 5.002);
+    tl.fromTo("#c1-w13", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 5.222);
+    tl.fromTo("#c1-w14", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 5.342);
+    tl.fromTo("#c1-w15", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 5.602);
+    tl.fromTo("#c1-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 2.238, ease: "sine.inOut" }, 3.522);
+    tl.to("#c1-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 5.600);
+    tl.fromTo("#c2-w16", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 5.762);
+    tl.fromTo("#c2-w17", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 5.922);
+    tl.fromTo("#c2-w18", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 6.162);
+    tl.fromTo("#c2-w19", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 6.382);
+    tl.fromTo("#c2-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.926, ease: "sine.inOut" }, 5.762);
+    tl.to("#c2-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 6.528);
+    tl.fromTo("#d1-w20", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 6.690);
+    tl.fromTo("#d1-w21", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 7.097);
+    tl.fromTo("#d1-w22", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 7.917);
+    tl.fromTo("#d1-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 1.625, ease: "sine.inOut" }, 6.690);
+    tl.to("#d1-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 8.155);
+    tl.fromTo("#d2-w23", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 8.317);
+    tl.fromTo("#d2-w24", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 8.557);
+    tl.fromTo("#d2-w25", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 8.717);
+    tl.fromTo("#d2-w26", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 8.957);
+    tl.fromTo("#d2-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.981, ease: "sine.inOut" }, 8.317);
+    tl.to("#d2-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 9.138);
+    tl.fromTo("#strike", { scaleX: 0, rotation: -5 }, { scaleX: 1, rotation: -5, duration: 0.2, ease: "power3.out" }, 6.462);
+    tl.fromTo(["#camA"], { scale: 1.0 }, { scale: 1.025, duration: 2.667, ease: "sine.inOut", immediateRender: true }, 0.000);
+    tl.fromTo(["#camA"], { scale: 1.025 }, { scale: 1.22, duration: 0.280, ease: "power3.out", immediateRender: false }, 2.667);
+    tl.fromTo(["#camA"], { scale: 1.22 }, { scale: 1.25, duration: 0.387, ease: "none", immediateRender: false }, 2.947);
+    tl.fromTo(["#camA"], { scale: 1.25 }, { scale: 1.0, duration: 0.340, ease: "power3.out", immediateRender: false }, 3.333);
+    tl.fromTo(["#camA"], { scale: 1.0 }, { scale: 1.05, duration: 2.893, ease: "none", immediateRender: false }, 3.673);
+    tl.fromTo(["#camA"], { scale: 1.05 }, { scale: 1.0, duration: 0.400, ease: "power3.out", immediateRender: false }, 6.567);
+    tl.fromTo(["#camA"], { scale: 1.0 }, { scale: 1.02, duration: 2.333, ease: "none", immediateRender: false }, 6.967);
+    window.__timelines["shot"] = tl;
+  </script>
+</template>
