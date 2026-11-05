@@ -3,21 +3,16 @@
     @font-face { font-family: "Inter Tight"; font-weight: 700; src: url("assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2"); }
     @font-face { font-family: "Inter Tight"; font-weight: 800; src: url("assets/fonts/inter-tight-latin-800-normal.woff2") format("woff2"); }
     #root { position: absolute; inset: 0; overflow: hidden; --white: #FFFFFF; --red: #E3263A; --font: "Inter Tight", sans-serif; }
-    .cam { position: absolute; inset: 0; transform-origin: 540px 600px; }
-    .cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-    #camA { z-index: 1; }
-    #behind-layer { position: absolute; inset: 0; z-index: 2; }
-    #camB { z-index: 3; }
-    #scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 1060px; z-index: 4;
+    #camA { position: absolute; inset: 0; transform-origin: 540px 600px; z-index: 1; }
+    #camA video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 1060px; z-index: 2;
       background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42) 26%, rgba(0,0,0,0.6) 46%, rgba(0,0,0,0.68) 100%); }
-    #front-layer { position: absolute; inset: 0; z-index: 5; }
+    #front-layer { position: absolute; inset: 0; z-index: 3; }
     .grp { position: absolute; inset: 0; overflow: visible; }
-    .behind { position: absolute; left: 0; right: 0; top: 190px; text-align: center; white-space: nowrap; transform-origin: 50% 50%;
-      font: 800 176px/0.9 var(--font); letter-spacing: -0.035em; text-transform: lowercase; }
     .front { position: absolute; inset: 0; perspective: 1100px; transform-origin: 30% 70%; }
     .line { position: absolute; left: 96px; right: 60px; white-space: nowrap; font-weight: 800; font-family: var(--font); line-height: 0.95;
       letter-spacing: -0.035em; text-transform: lowercase; text-shadow: 0 4px 22px rgba(0,0,0,0.45); }
-    .bw, .fw { display: inline-block; opacity: 0; position: relative; }
+    .fw { display: inline-block; opacity: 0; position: relative; }
     .white { color: var(--white); }
     .red { color: var(--red); }
     .arc { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
@@ -25,19 +20,24 @@
     .strike { position: absolute; left: -4%; right: -4%; top: 52%; height: 12px; margin-top: -6px; background: var(--white); border-radius: 6px; transform-origin: 0% 50%; }
   </style>
   <div id="root" data-composition-id="shot" data-width="1080" data-height="1920">
-    <div id="camA" class="cam"><video id="v-aroll" class="clip" src="assets/aroll-sample.mp4" muted playsinline data-start="0" data-duration="9.3000" data-track-index="0"></video></div>
-    <div id="behind-layer" data-layout-allow-overlap>
-      
-    </div>
+    <div id="camA"><video id="v-aroll" class="clip" src="assets/aroll.mp4" muted playsinline data-start="0" data-duration="30.7980" data-track-index="0"></video></div>
     <div id="scrim" data-layout-ignore></div>
     <div id="front-layer">
-            <div id="a1-F" class="clip grp" data-start="0.0600" data-duration="0.7380" data-track-index="4"><div id="a1-Fi" class="front"><svg class="arc" viewBox="0 0 1080 1920" aria-hidden="true"><path id="a1-path" d="M 96 1010 Q 540 1215 984 1010" fill="none"/><text class="arct"><textPath id="a1-tp" href="#a1-path" startOffset="44%" text-anchor="middle"><tspan id="a1-t0" fill-opacity="0">to</tspan> <tspan id="a1-t1" fill-opacity="0">those</tspan> <tspan id="a1-t2" fill-opacity="0">of</tspan> <tspan id="a1-t3" fill-opacity="0">you</tspan></textPath></text></svg></div></div>
-      <div id="a2-F" class="clip grp" data-start="0.8000" data-duration="1.8647" data-track-index="4"><div id="a2-Fi" class="front"><div class="line" style="top:1000px; font-size:100px"><span id="a2-w4" class="fw white">who</span> <span id="a2-w5" class="fw white">feel</span></div><div class="line" style="top:1104px; font-size:70px"><span id="a2-w6" class="fw white">too</span></div><div class="line" style="top:1168px; font-size:170px"><span id="a2-w7" class="fw red">deeply,</span></div></div></div>
-      <div id="b-F" class="clip grp" data-start="2.6667" data-duration="0.8333" data-track-index="4"><div id="b-Fi" class="front"><div class="line" style="top:1050px; font-size:236px"><span id="b-w8" class="fw white">listen.</span></div></div></div>
-      <div id="c1-F" class="clip grp" data-start="3.5220" data-duration="2.2380" data-track-index="4"><div id="c1-Fi" class="front"><div class="line" style="top:1040px; font-size:132px"><span id="c1-w9" class="fw white">never</span> <span id="c1-w10" class="fw white">ever</span></div><div class="line" style="top:1182px; font-size:76px"><span id="c1-w11" class="fw white">let</span> <span id="c1-w12" class="fw white">the</span> <span id="c1-w13" class="fw red">world</span></div><div class="line" style="top:1262px; font-size:76px"><span id="c1-w14" class="fw white">tell</span> <span id="c1-w15" class="fw white">you</span></div></div></div>
-      <div id="c2-F" class="clip grp" data-start="5.7620" data-duration="0.9260" data-track-index="4"><div id="c2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="c2-w16" class="fw white">that</span> <span id="c2-w17" class="fw white">it&#x27;s</span> <span id="c2-w18" class="fw white">a</span></div><div class="line" style="top:1112px; font-size:220px"><span id="c2-w19" class="fw red">flaw.<span id='strike' class='strike'></span></span></div></div></div>
-      <div id="d1-F" class="clip grp" data-start="6.6900" data-duration="1.6250" data-track-index="4"><div id="d1-Fi" class="front"><div class="line" style="top:1060px; font-size:76px"><span id="d1-w20" class="fw white">because</span></div><div class="line" style="top:1140px; font-size:112px"><span id="d1-w21" class="fw white">loving</span> <span id="d1-w22" class="fw white">someone</span></div></div></div>
-      <div id="d2-F" class="clip grp" data-start="8.3170" data-duration="0.9810" data-track-index="4"><div id="d2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="d2-w23" class="fw white">with</span> <span id="d2-w24" class="fw white">your</span></div><div class="line" style="top:1114px; font-size:160px"><span id="d2-w25" class="fw white">whole</span> <span id="d2-w26" class="fw red">heart</span></div></div></div>
+            <div id="a1-F" class="clip grp" data-start="0.0600" data-duration="0.7380" data-track-index="2"><div id="a1-Fi" class="front"><svg class="arc" viewBox="0 0 1080 1920" aria-hidden="true"><path id="a1-path" d="M 96 1010 Q 540 1215 984 1010" fill="none"/><text class="arct"><textPath id="a1-tp" href="#a1-path" startOffset="44%" text-anchor="middle"><tspan id="a1-t0" fill-opacity="0">to</tspan> <tspan id="a1-t1" fill-opacity="0">those</tspan> <tspan id="a1-t2" fill-opacity="0">of</tspan> <tspan id="a1-t3" fill-opacity="0">you</tspan></textPath></text></svg></div></div>
+      <div id="a2-F" class="clip grp" data-start="0.8000" data-duration="1.8647" data-track-index="3"><div id="a2-Fi" class="front"><div class="line" style="top:1000px; font-size:100px"><span id="a2-w4" class="fw white">who</span> <span id="a2-w5" class="fw white">feel</span></div><div class="line" style="top:1104px; font-size:70px"><span id="a2-w6" class="fw white">too</span></div><div class="line" style="top:1168px; font-size:170px"><span id="a2-w7" class="fw red">deeply,</span></div></div></div>
+      <div id="b-F" class="clip grp" data-start="2.6667" data-duration="0.8333" data-track-index="2"><div id="b-Fi" class="front"><div class="line" style="top:1050px; font-size:236px"><span id="b-w8" class="fw white">listen.</span></div></div></div>
+      <div id="c1-F" class="clip grp" data-start="3.5220" data-duration="2.2380" data-track-index="3"><div id="c1-Fi" class="front"><div class="line" style="top:1040px; font-size:132px"><span id="c1-w9" class="fw white">never</span> <span id="c1-w10" class="fw white">ever</span></div><div class="line" style="top:1182px; font-size:76px"><span id="c1-w11" class="fw white">let</span> <span id="c1-w12" class="fw white">the</span> <span id="c1-w13" class="fw red">world</span></div><div class="line" style="top:1262px; font-size:76px"><span id="c1-w14" class="fw white">tell</span> <span id="c1-w15" class="fw white">you</span></div></div></div>
+      <div id="c2-F" class="clip grp" data-start="5.7620" data-duration="0.9260" data-track-index="2"><div id="c2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="c2-w16" class="fw white">that</span> <span id="c2-w17" class="fw white">it&#x27;s</span> <span id="c2-w18" class="fw white">a</span></div><div class="line" style="top:1112px; font-size:220px"><span id="c2-w19" class="fw red">flaw.<span id='strike' class='strike'></span></span></div></div></div>
+      <div id="d1-F" class="clip grp" data-start="6.6900" data-duration="1.6250" data-track-index="3"><div id="d1-Fi" class="front"><div class="line" style="top:1060px; font-size:76px"><span id="d1-w20" class="fw white">because</span></div><div class="line" style="top:1140px; font-size:112px"><span id="d1-w21" class="fw white">loving</span> <span id="d1-w22" class="fw white">someone</span></div></div></div>
+      <div id="d2-F" class="clip grp" data-start="8.3170" data-duration="0.9810" data-track-index="2"><div id="d2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="d2-w23" class="fw white">with</span> <span id="d2-w24" class="fw white">your</span></div><div class="line" style="top:1114px; font-size:160px"><span id="d2-w25" class="fw white">whole</span> <span id="d2-w26" class="fw red">heart</span></div></div></div>
+      <div id="e1-F" class="clip grp" data-start="12.1667" data-duration="0.7833" data-track-index="3"><div id="e1-Fi" class="front"><div class="line" style="top:1040px; font-size:84px"><span id="e1-w32" class="fw white">but</span> <span id="e1-w33" class="fw white">not</span></div><div class="line" style="top:1130px; font-size:150px"><span id="e1-w34" class="fw white">everyone</span></div></div></div>
+      <div id="e2-F" class="clip grp" data-start="12.9520" data-duration="1.6060" data-track-index="2"><div id="e2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="e2-w35" class="fw white">can</span> <span id="e2-w36" class="fw white">handle</span> <span id="e2-w37" class="fw white">that</span></div><div class="line" style="top:1114px; font-size:176px"><span id="e2-w38" class="fw red">intensity,</span></div></div></div>
+      <div id="e3-F" class="clip grp" data-start="14.5600" data-duration="0.8380" data-track-index="3"><div id="e3-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="e3-w39" class="fw white">and</span> <span id="e3-w40" class="fw white">that&#x27;s</span></div><div class="line" style="top:1114px; font-size:170px"><span id="e3-w41" class="fw white">okay</span> <span id="e3-w42" class="fw white">too.</span></div></div></div>
+      <div id="f-F" class="clip grp" data-start="21.4667" data-duration="0.8813" data-track-index="2"><div id="f-Fi" class="front"><div class="line" style="top:990px; font-size:84px"><span id="f-w58" class="fw white">but</span></div><div class="line" style="top:1070px; font-size:236px"><span id="f-w59" class="fw white">listen.</span></div></div></div>
+      <div id="g1-F" class="clip grp" data-start="26.2833" data-duration="1.8007" data-track-index="3"><div id="g1-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="g1-w70" class="fw white">and</span> <span id="g1-w71" class="fw white">you</span></div><div class="line" style="top:1116px; font-size:150px"><span id="g1-w72" class="fw white">never</span> <span id="g1-w73" class="fw white">ever</span></div></div></div>
+      <div id="g2-F" class="clip grp" data-start="28.0860" data-duration="0.7980" data-track-index="2"><div id="g2-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="g2-w74" class="fw white">let</span> <span id="g2-w75" class="fw white">it</span></div><div class="line" style="top:1114px; font-size:190px"><span id="g2-w76" class="fw red">shrink</span></div></div></div>
+      <div id="g3-F" class="clip grp" data-start="28.8860" data-duration="0.8490" data-track-index="3"><div id="g3-Fi" class="front"><div class="line" style="top:1080px; font-size:120px"><span id="g3-w77" class="fw white">for</span> <span id="g3-w78" class="fw white">someone</span></div></div></div>
+      <div id="g4-F" class="clip grp" data-start="29.7370" data-duration="1.0610" data-track-index="2"><div id="g4-Fi" class="front"><div class="line" style="top:1040px; font-size:76px"><span id="g4-w79" class="fw white">who</span> <span id="g4-w80" class="fw white">couldn&#x27;t</span></div><div class="line" style="top:1114px; font-size:170px"><span id="g4-w81" class="fw white">handle</span> <span id="g4-w82" class="fw red">it.</span></div></div></div>
     </div>
   </div>
   <script>
@@ -84,14 +84,80 @@
     tl.fromTo("#d2-w26", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 8.957);
     tl.fromTo("#d2-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.981, ease: "sine.inOut" }, 8.317);
     tl.to("#d2-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 9.138);
+    tl.fromTo("#e1-w32", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 12.240);
+    tl.fromTo("#e1-w33", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 12.430);
+    tl.fromTo("#e1-w34", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 12.592);
+    tl.fromTo("#e1-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.783, ease: "sine.inOut" }, 12.167);
+    tl.to("#e1-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 12.790);
+    tl.fromTo("#e2-w35", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 12.952);
+    tl.fromTo("#e2-w36", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 13.212);
+    tl.fromTo("#e2-w37", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 13.492);
+    tl.fromTo("#e2-w38", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 13.772);
+    tl.fromTo("#e2-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 1.606, ease: "sine.inOut" }, 12.952);
+    tl.to("#e2-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 14.398);
+    tl.fromTo("#e3-w39", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 14.560);
+    tl.fromTo("#e3-w40", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 14.652);
+    tl.fromTo("#e3-w41", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 14.932);
+    tl.fromTo("#e3-w42", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 15.052);
+    tl.fromTo("#e3-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.838, ease: "sine.inOut" }, 14.560);
+    tl.to("#e3-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 15.238);
+    tl.fromTo("#f-w58", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 21.635);
+    tl.fromTo("#f-w59", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 21.775);
+    tl.fromTo("#f-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.881, ease: "sine.inOut" }, 21.467);
+    tl.to("#f-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 22.188);
+    tl.fromTo("#g1-w70", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 26.400);
+    tl.fromTo("#g1-w71", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 26.506);
+    tl.fromTo("#g1-w72", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 26.806);
+    tl.fromTo("#g1-w73", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 27.510);
+    tl.fromTo("#g1-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 1.801, ease: "sine.inOut" }, 26.283);
+    tl.to("#g1-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 27.924);
+    tl.fromTo("#g2-w74", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 28.086);
+    tl.fromTo("#g2-w75", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 28.446);
+    tl.fromTo("#g2-w76", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 28.646);
+    tl.fromTo("#g2-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.798, ease: "sine.inOut" }, 28.086);
+    tl.to("#g2-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 28.724);
+    tl.fromTo("#g3-w77", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 28.886);
+    tl.fromTo("#g3-w78", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 29.126);
+    tl.fromTo("#g3-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 0.849, ease: "sine.inOut" }, 28.886);
+    tl.to("#g3-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 29.575);
+    tl.fromTo("#g4-w79", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 29.737);
+    tl.fromTo("#g4-w80", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 29.834);
+    tl.fromTo("#g4-w81", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 30.194);
+    tl.fromTo("#g4-w82", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 30.434);
+    tl.fromTo("#g4-Fi", { y: 0, scale: 1 }, { y: -14, scale: 1.02, duration: 1.061, ease: "sine.inOut" }, 29.737);
+    tl.to("#g4-Fi", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in" }, 30.638);
     tl.fromTo("#strike", { scaleX: 0, rotation: -5 }, { scaleX: 1, rotation: -5, duration: 0.2, ease: "power3.out" }, 6.462);
-    tl.fromTo(["#camA"], { scale: 1.0 }, { scale: 1.025, duration: 2.667, ease: "sine.inOut", immediateRender: true }, 0.000);
-    tl.fromTo(["#camA"], { scale: 1.025 }, { scale: 1.22, duration: 0.280, ease: "power3.out", immediateRender: false }, 2.667);
-    tl.fromTo(["#camA"], { scale: 1.22 }, { scale: 1.25, duration: 0.387, ease: "none", immediateRender: false }, 2.947);
-    tl.fromTo(["#camA"], { scale: 1.25 }, { scale: 1.0, duration: 0.340, ease: "power3.out", immediateRender: false }, 3.333);
-    tl.fromTo(["#camA"], { scale: 1.0 }, { scale: 1.05, duration: 2.893, ease: "none", immediateRender: false }, 3.673);
-    tl.fromTo(["#camA"], { scale: 1.05 }, { scale: 1.0, duration: 0.400, ease: "power3.out", immediateRender: false }, 6.567);
-    tl.fromTo(["#camA"], { scale: 1.0 }, { scale: 1.02, duration: 2.333, ease: "none", immediateRender: false }, 6.967);
+    tl.to("#e2-w38", { x: 7, y: -3, duration: 0.05, ease: "none" }, 13.952);
+    tl.to("#e2-w38", { x: -6, y: 4, duration: 0.05, ease: "none" }, 14.002);
+    tl.to("#e2-w38", { x: 5, y: -2, duration: 0.05, ease: "none" }, 14.052);
+    tl.to("#e2-w38", { x: -4, y: 3, duration: 0.05, ease: "none" }, 14.102);
+    tl.to("#e2-w38", { x: 3, y: -1, duration: 0.05, ease: "none" }, 14.152);
+    tl.to("#e2-w38", { x: 0, y: 0, duration: 0.05, ease: "none" }, 14.202);
+    tl.fromTo("#e2-w38", { textShadow: "0 0 0px rgba(227,38,58,0)" }, { textShadow: "0 0 38px rgba(227,38,58,0.85)", duration: 0.25, ease: "power2.out", yoyo: true, repeat: 1 }, 13.952);
+    tl.fromTo("#g2-w76", { scale: 1 }, { scale: 0.42, duration: 0.5, ease: "power3.inOut", transformOrigin: "0% 80%", immediateRender: false }, 28.766);
+    tl.fromTo("#camA", { scale: 1.0 }, { scale: 1.03, duration: 2.667, ease: "sine.inOut", immediateRender: true }, 0.000);
+    tl.fromTo("#camA", { scale: 1.03 }, { scale: 1.22, duration: 0.280, ease: "power3.out", immediateRender: false }, 2.667);
+    tl.fromTo("#camA", { scale: 1.22 }, { scale: 1.25, duration: 0.387, ease: "none", immediateRender: false }, 2.947);
+    tl.fromTo("#camA", { scale: 1.25 }, { scale: 1.0, duration: 0.340, ease: "power3.out", immediateRender: false }, 3.333);
+    tl.fromTo("#camA", { scale: 1.0 }, { scale: 1.05, duration: 2.893, ease: "none", immediateRender: false }, 3.673);
+    tl.fromTo("#camA", { scale: 1.05 }, { scale: 1.11, duration: 0.350, ease: "power3.out", immediateRender: false }, 6.567);
+    tl.fromTo("#camA", { scale: 1.11 }, { scale: 1.14, duration: 2.383, ease: "none", immediateRender: false }, 6.917);
+    tl.fromTo("#camA", { scale: 1.14 }, { scale: 1.0, duration: 0.010, ease: "none", immediateRender: false }, 12.067);
+    tl.fromTo("#camA", { scale: 1.0 }, { scale: 1.04, duration: 1.695, ease: "none", immediateRender: false }, 12.077);
+    tl.fromTo("#camA", { scale: 1.04 }, { scale: 1.13, duration: 0.250, ease: "power3.out", immediateRender: false }, 13.772);
+    tl.fromTo("#camA", { scale: 1.13 }, { scale: 1.15, duration: 0.911, ease: "none", immediateRender: false }, 14.022);
+    tl.fromTo("#camA", { scale: 1.15 }, { scale: 1.05, duration: 0.350, ease: "power3.out", immediateRender: false }, 14.933);
+    tl.fromTo("#camA", { scale: 1.05 }, { scale: 1.07, duration: 0.117, ease: "none", immediateRender: false }, 15.283);
+    tl.fromTo("#camA", { scale: 1.07 }, { scale: 1.0, duration: 0.010, ease: "none", immediateRender: false }, 15.400);
+    tl.fromTo("#camA", { scale: 1.0 }, { scale: 1.22, duration: 0.280, ease: "power3.out", immediateRender: false }, 21.467);
+    tl.fromTo("#camA", { scale: 1.22 }, { scale: 1.25, duration: 0.553, ease: "none", immediateRender: false }, 21.747);
+    tl.fromTo("#camA", { scale: 1.25 }, { scale: 1.0, duration: 0.010, ease: "none", immediateRender: false }, 22.300);
+    tl.fromTo("#camA", { scale: 1.0 }, { scale: 1.06, duration: 0.010, ease: "none", immediateRender: false }, 26.233);
+    tl.fromTo("#camA", { scale: 1.06 }, { scale: 1.1, duration: 2.403, ease: "none", immediateRender: false }, 26.243);
+    tl.fromTo("#camA", { scale: 1.1 }, { scale: 1.0, duration: 0.500, ease: "power3.inOut", immediateRender: false }, 28.646);
+    tl.fromTo("#camA", { scale: 1.0 }, { scale: 1.03, duration: 0.591, ease: "none", immediateRender: false }, 29.146);
+    tl.fromTo("#camA", { scale: 1.03 }, { scale: 1.12, duration: 0.400, ease: "power3.out", immediateRender: false }, 29.737);
+    tl.fromTo("#camA", { scale: 1.12 }, { scale: 1.15, duration: 0.663, ease: "none", immediateRender: false }, 30.137);
     window.__timelines["shot"] = tl;
   </script>
 </template>

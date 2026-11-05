@@ -1,0 +1,56 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter Tight"; font-weight: 700; src: url("assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter Tight"; font-weight: 800; src: url("assets/fonts/inter-tight-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; --white: #FFFFFF; --red: #E3263A; --font: "Inter Tight", sans-serif; }
+    #depth-card { position: absolute; left: 0; right: 0; top: 0; height: 960px; overflow: hidden; background: radial-gradient(90% 75% at 50% 62%, #0F2E40 0%, #061620 55%, #020507 100%); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+    #depth-card .seam { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: #E3263A; }
+    .cap { position: absolute; left: 96px; right: 96px; top: 188px; font: 700 56px/1 var(--font); letter-spacing: -0.02em; color: rgba(255,255,255,0.85); text-transform: lowercase; white-space: nowrap; opacity: 0; }
+    .kw { display: inline-block; opacity: 0; white-space: nowrap; font-family: var(--font); font-weight: 800; letter-spacing: -0.035em; text-transform: lowercase; }
+  </style>
+  <div id="root" data-composition-id="depth" data-width="1080" data-height="1920">
+    <div id="depth-card"><div id="depth-c60" class="cap">as the time passes,</div><div id="depth-c66" class="cap">will find</div><div id="depth-line" style="position:absolute; left:96px; width:888px; top:264px; height:3px; background:rgba(255,255,255,0.55); transform-origin:0% 50%"></div><svg viewBox="0 0 1080 960" style="position:absolute; left:0; top:0; width:1080px; height:960px; overflow:visible" aria-hidden="true"><defs><radialGradient id="depth-g"><stop offset="0" stop-color="#E3263A" stop-opacity="0.6"/><stop offset="1" stop-color="#E3263A" stop-opacity="0"/></radialGradient></defs><circle id="depth-p0" cx="492" cy="711" r="6.2" fill="#BFE6FF" opacity="0"/><circle id="depth-p1" cx="548" cy="725" r="3.2" fill="#BFE6FF" opacity="0"/><circle id="depth-p2" cx="670" cy="832" r="2.9" fill="#BFE6FF" opacity="0"/><circle id="depth-p3" cx="131" cy="841" r="5.3" fill="#BFE6FF" opacity="0"/><circle id="depth-p4" cx="1022" cy="922" r="5.1" fill="#BFE6FF" opacity="0"/><circle id="depth-p5" cx="197" cy="428" r="4.6" fill="#BFE6FF" opacity="0"/><circle id="depth-p6" cx="230" cy="546" r="2.6" fill="#BFE6FF" opacity="0"/><circle id="depth-p7" cx="481" cy="858" r="4.6" fill="#BFE6FF" opacity="0"/><circle id="depth-p8" cx="540" cy="764" r="4.3" fill="#BFE6FF" opacity="0"/><circle id="depth-p9" cx="1038" cy="938" r="5.9" fill="#BFE6FF" opacity="0"/><circle id="depth-p10" cx="355" cy="539" r="3.7" fill="#BFE6FF" opacity="0"/><circle id="depth-p11" cx="806" cy="628" r="5.9" fill="#BFE6FF" opacity="0"/><circle id="depth-p12" cx="998" cy="861" r="2.5" fill="#BFE6FF" opacity="0"/><circle id="depth-p13" cx="950" cy="664" r="6.4" fill="#BFE6FF" opacity="0"/><circle id="depth-p14" cx="113" cy="747" r="5.6" fill="#BFE6FF" opacity="0"/><circle id="depth-p15" cx="127" cy="593" r="6.4" fill="#BFE6FF" opacity="0"/><circle id="depth-p16" cx="158" cy="548" r="2.9" fill="#BFE6FF" opacity="0"/><circle id="depth-p17" cx="837" cy="512" r="4.7" fill="#BFE6FF" opacity="0"/><circle id="depth-p18" cx="231" cy="801" r="3.0" fill="#BFE6FF" opacity="0"/><circle id="depth-p19" cx="157" cy="639" r="3.4" fill="#BFE6FF" opacity="0"/><circle id="depth-p20" cx="1011" cy="838" r="3.7" fill="#BFE6FF" opacity="0"/><circle id="depth-p21" cx="251" cy="625" r="5.9" fill="#BFE6FF" opacity="0"/><circle id="depth-rp0" cx="420" cy="560" r="120" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0"/><circle id="depth-rp1" cx="420" cy="560" r="120" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0"/><circle id="depth-rp2" cx="420" cy="560" r="120" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0"/><ellipse id="depth-glow" cx="520" cy="560" rx="110" ry="170" fill="url(#depth-g)" opacity="0"/><circle id="depth-r1" cx="420" cy="560" r="170" fill="none" stroke="#FFFFFF" stroke-width="5" opacity="0"/><circle id="depth-r2" cx="620" cy="560" r="170" fill="none" stroke="#E3263A" stroke-width="5" opacity="0"/></svg><div id="depth-l1" style="position:absolute; left:96px; top:318px; font:700 50px var(--font); color:#FFFFFF; opacity:0">your depth</div><div id="depth-l2" style="position:absolute; right:80px; top:770px; font:800 104px var(--font); letter-spacing:-0.035em; color:#E3263A; opacity:0">its depth.</div><div class="seam"></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#depth-card", { y: -980 }, { y: 0, duration: 0.30, ease: "power3.out" }, 0);
+    tl.fromTo("#depth-c60", { opacity: 0, y: 18, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.470);
+    tl.to("#depth-c60", { opacity: 0, y: -12, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, 2.336);
+    tl.fromTo("#depth-c66", { opacity: 0, y: 18, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 2.486);
+    tl.to("#depth-c66", { opacity: 0, y: -12, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, 4.083);
+    tl.fromTo("#depth-p0", { opacity: 0, y: 0 }, { opacity: 0.46, y: -90, duration: 3.93, ease: "none" }, 0.100);
+    tl.fromTo("#depth-p1", { opacity: 0, y: 0 }, { opacity: 0.48, y: -127, duration: 3.93, ease: "none" }, 0.280);
+    tl.fromTo("#depth-p2", { opacity: 0, y: 0 }, { opacity: 0.39, y: -164, duration: 3.93, ease: "none" }, 0.460);
+    tl.fromTo("#depth-p3", { opacity: 0, y: 0 }, { opacity: 0.27, y: -201, duration: 3.93, ease: "none" }, 0.640);
+    tl.fromTo("#depth-p4", { opacity: 0, y: 0 }, { opacity: 0.53, y: -238, duration: 3.93, ease: "none" }, 0.820);
+    tl.fromTo("#depth-p5", { opacity: 0, y: 0 }, { opacity: 0.28, y: -115, duration: 3.93, ease: "none" }, 1.000);
+    tl.fromTo("#depth-p6", { opacity: 0, y: 0 }, { opacity: 0.46, y: -152, duration: 3.93, ease: "none" }, 1.180);
+    tl.fromTo("#depth-p7", { opacity: 0, y: 0 }, { opacity: 0.54, y: -189, duration: 3.93, ease: "none" }, 0.100);
+    tl.fromTo("#depth-p8", { opacity: 0, y: 0 }, { opacity: 0.38, y: -226, duration: 3.93, ease: "none" }, 0.280);
+    tl.fromTo("#depth-p9", { opacity: 0, y: 0 }, { opacity: 0.57, y: -103, duration: 3.93, ease: "none" }, 0.460);
+    tl.fromTo("#depth-p10", { opacity: 0, y: 0 }, { opacity: 0.28, y: -140, duration: 3.93, ease: "none" }, 0.640);
+    tl.fromTo("#depth-p11", { opacity: 0, y: 0 }, { opacity: 0.42, y: -177, duration: 3.93, ease: "none" }, 0.820);
+    tl.fromTo("#depth-p12", { opacity: 0, y: 0 }, { opacity: 0.34, y: -214, duration: 3.93, ease: "none" }, 1.000);
+    tl.fromTo("#depth-p13", { opacity: 0, y: 0 }, { opacity: 0.43, y: -91, duration: 3.93, ease: "none" }, 1.180);
+    tl.fromTo("#depth-p14", { opacity: 0, y: 0 }, { opacity: 0.37, y: -128, duration: 3.93, ease: "none" }, 0.100);
+    tl.fromTo("#depth-p15", { opacity: 0, y: 0 }, { opacity: 0.59, y: -165, duration: 3.93, ease: "none" }, 0.280);
+    tl.fromTo("#depth-p16", { opacity: 0, y: 0 }, { opacity: 0.28, y: -202, duration: 3.93, ease: "none" }, 0.460);
+    tl.fromTo("#depth-p17", { opacity: 0, y: 0 }, { opacity: 0.45, y: -239, duration: 3.93, ease: "none" }, 0.640);
+    tl.fromTo("#depth-p18", { opacity: 0, y: 0 }, { opacity: 0.54, y: -116, duration: 3.93, ease: "none" }, 0.820);
+    tl.fromTo("#depth-p19", { opacity: 0, y: 0 }, { opacity: 0.37, y: -153, duration: 3.93, ease: "none" }, 1.000);
+    tl.fromTo("#depth-p20", { opacity: 0, y: 0 }, { opacity: 0.65, y: -190, duration: 3.93, ease: "none" }, 1.180);
+    tl.fromTo("#depth-p21", { opacity: 0, y: 0 }, { opacity: 0.54, y: -227, duration: 3.93, ease: "none" }, 0.100);
+    tl.fromTo("#depth-line", { scaleX: 0 }, { scaleX: 1, duration: 1.376, ease: "none" }, 0.470);
+    tl.fromTo("#depth-r1", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, 1.846);
+    tl.fromTo("#depth-l1", { opacity: 0, x: -40, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.846);
+    tl.fromTo("#depth-rp0", { opacity: 0.55, scale: 0.8, transformOrigin: "50% 50%" }, { opacity: 0, scale: 2.2, duration: 1.4, ease: "power1.out" }, 1.996);
+    tl.fromTo("#depth-rp1", { opacity: 0.55, scale: 0.8, transformOrigin: "50% 50%" }, { opacity: 0, scale: 2.2, duration: 1.4, ease: "power1.out" }, 2.446);
+    tl.fromTo("#depth-rp2", { opacity: 0.55, scale: 0.8, transformOrigin: "50% 50%" }, { opacity: 0, scale: 2.2, duration: 1.4, ease: "power1.out" }, 2.896);
+    tl.fromTo("#depth-r2", { opacity: 0, x: 320 }, { opacity: 1, x: 320, duration: 0.2 }, 2.486);
+    tl.fromTo("#depth-r2", { x: 320 }, { x: 0, duration: 0.857, ease: "power2.inOut", immediateRender: false }, 2.686);
+    tl.fromTo("#depth-glow", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 3.393);
+    tl.fromTo("#depth-l2", { opacity: 0, scale: 1.25, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.24, ease: "expo.out" }, 3.343);
+    tl.to("#depth-card", { y: -980, duration: 0.30, ease: "power3.in" }, 4.233);
+    window.__timelines["depth"] = tl;
+  </script>
+</template>

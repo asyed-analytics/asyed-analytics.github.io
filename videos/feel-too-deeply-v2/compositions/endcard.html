@@ -1,0 +1,31 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter Tight"; font-weight: 700; src: url("assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter Tight"; font-weight: 800; src: url("assets/fonts/inter-tight-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; --white: #FFFFFF; --red: #E3263A; --font: "Inter Tight", sans-serif; }
+    #end-bg { position: absolute; inset: 0; background: radial-gradient(70% 45% at 50% 45%, #1E0A0D 0%, #050304 65%, #000000 100%); }
+    #end-inner { position: absolute; inset: 0; }
+    .el { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; font-family: var(--font); font-weight: 800; letter-spacing: -0.035em; line-height: 0.95; text-transform: lowercase; perspective: 1100px; }
+    .ew { display: inline-block; opacity: 0; }
+    #end-ul { position: absolute; left: 230px; right: 230px; top: 1218px; height: 8px; background: #E3263A; border-radius: 4px; transform-origin: 0% 50%; }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="end-bg"></div>
+    <div id="end-inner">
+      <div class="el" style="top:830px; font-size:64px; color:#FFFFFF"><span id="end-w1" class="ew">send this to someone</span></div>
+      <div class="el" style="top:912px; font-size:120px; color:#FFFFFF"><span id="end-w2" class="ew">who feels</span></div>
+      <div class="el" style="top:1040px; font-size:150px; color:#E3263A"><span id="end-w3" class="ew">too deeply.</span></div>
+      <div id="end-ul"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#end-bg", { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.fromTo("#end-w1", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 0.000);
+    tl.fromTo("#end-w2", { opacity: 0, x: 90, rotationY: -38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 0.200);
+    tl.fromTo("#end-w3", { opacity: 0, scale: 1.25, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.26, ease: "expo.out" }, 0.360);
+    tl.fromTo("#end-ul", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.8);
+    tl.fromTo("#end-inner", { scale: 1 }, { scale: 1.045, duration: 2.500, ease: "none" }, 0);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

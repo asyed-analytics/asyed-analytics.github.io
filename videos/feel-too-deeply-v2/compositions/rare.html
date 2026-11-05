@@ -1,0 +1,42 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter Tight"; font-weight: 700; src: url("assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter Tight"; font-weight: 800; src: url("assets/fonts/inter-tight-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; --white: #FFFFFF; --red: #E3263A; --font: "Inter Tight", sans-serif; }
+    #rare-card { position: absolute; inset: 0; background: radial-gradient(70% 45% at 50% 35%, #2A0A10 0%, #0A0506 60%, #000000 100%); }
+    #rare-inner { position: absolute; inset: 0; }
+    #rare-heart { position: absolute; left: 340px; top: 330px; width: 400px; height: 368px; filter: drop-shadow(0 0 26px rgba(227,38,58,0.55)); }
+    #rare-ecgsvg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; filter: drop-shadow(0 0 10px rgba(227,38,58,0.7)); }
+    .rl { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; font-family: var(--font); font-weight: 800; letter-spacing: -0.035em; line-height: 0.95; perspective: 1100px; }
+    .rw { display: inline-block; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="rare" data-width="1080" data-height="1920">
+    <div id="rare-card"><div id="rare-inner">
+      <svg id="rare-heart" viewBox="0 0 100 92" aria-hidden="true"><path id="rare-heart-path" d="M50 86 C 18 62, 4 44, 4 26 C 4 12, 15 4, 28 4 C 38 4, 46 10, 50 20 C 54 10, 62 4, 72 4 C 85 4, 96 12, 96 26 C 96 44, 82 62, 50 86 Z" fill="#E3263A" fill-opacity="0" stroke="#E3263A" stroke-width="2.4" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg>
+      <svg id="rare-ecgsvg" viewBox="0 0 1080 1920" aria-hidden="true"><path id="rare-ecg" d="M0 830 L390 830 L405 810 L420 868 L436 712 L451 892 L466 830 L500 830 L515 810 L530 868 L548 690 L563 900 L578 830 L1080 830" fill="none" stroke="#E3263A" stroke-width="5" stroke-linejoin="round" stroke-linecap="butt" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg>
+      <div class="rl" style="top:1000px; font-size:76px; color:#FFFFFF"><span id="rare-w27" class="rw">is</span> <span id="rare-w28" class="rw">very,</span> <span id="rare-w29" class="rw">very</span></div>
+      <div class="rl" style="top:1082px; font-size:200px; color:#E3263A"><span id="rare-w30" class="rw">rare</span></div>
+      <div class="rl" style="top:1268px; font-size:72px; color:#FFFFFF"><span id="rare-w31" class="rw">nowadays.</span></div>
+    </div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#rare-card", { opacity: 0, scale: 1.14, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, 0);
+    tl.fromTo("#rare-heart-path", { attr: { "stroke-dashoffset": 100 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.7, ease: "power2.inOut" }, 0.12);
+    tl.set("#rare-heart", { scale: 1, transformOrigin: "50% 55%" }, 0);
+    tl.fromTo("#rare-ecg", { attr: { "stroke-dashoffset": 100 } }, { attr: { "stroke-dashoffset": 0 }, duration: 2.5, ease: "none" }, 0.22);
+    tl.to("#rare-heart", { scale: 1.1, duration: 0.09, ease: "power2.out", transformOrigin: "50% 55%" }, 1.229);
+    tl.to("#rare-heart", { scale: 1, duration: 0.13, ease: "power2.inOut" }, 1.319);
+    tl.to("#rare-heart", { scale: 1.1, duration: 0.09, ease: "power2.out", transformOrigin: "50% 55%" }, 1.494);
+    tl.to("#rare-heart", { scale: 1, duration: 0.13, ease: "power2.inOut" }, 1.584);
+    tl.to("#rare-heart-path", { attr: { "fill-opacity": 0.9 }, duration: 0.35, ease: "power2.out" }, 1.494);
+    tl.fromTo("#rare-w27", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 0.230);
+    tl.fromTo("#rare-w28", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 0.385);
+    tl.fromTo("#rare-w29", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 1.229);
+    tl.fromTo("#rare-w30", { opacity: 0, scale: 1.25, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.22, ease: "expo.out" }, 1.494);
+    tl.fromTo("#rare-w31", { opacity: 0, x: -90, rotationY: 38, filter: "blur(14px)" }, { opacity: 1, x: 0, rotationY: 0, filter: "blur(0px)", duration: 0.18, ease: "expo.out" }, 2.054);
+    tl.fromTo("#rare-inner", { scale: 1 }, { scale: 1.04, duration: 2.887, ease: "none" }, 0);
+    tl.to("#rare-card", { opacity: 0, scale: 0.94, filter: "blur(16px)", duration: 0.3, ease: "power2.in" }, 2.767);
+    window.__timelines["rare"] = tl;
+  </script>
+</template>

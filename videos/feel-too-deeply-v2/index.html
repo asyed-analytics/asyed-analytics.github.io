@@ -10,9 +10,13 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="9.3000" data-width="1080" data-height="1920">
-      <div id="shot" data-composition-id="shot" data-composition-src="compositions/shot.html" data-start="0" data-duration="9.3000" data-track-index="1" data-track-kind="captions" data-width="1080" data-height="1920"></div>
-      <audio id="mix" class="clip" src="assets/mix-sample.wav" data-start="0" data-duration="9.3000" data-track-index="9" data-volume="1"></audio>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="33.2000" data-width="1080" data-height="1920">
+      <div id="shot" data-composition-id="shot" data-composition-src="compositions/shot.html" data-start="0.0000" data-duration="30.7980" data-track-index="1" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:1"></div>
+      <div id="rare" data-composition-id="rare" data-composition-src="compositions/rare.html" data-start="9.1800" data-duration="3.0847" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="see" data-composition-id="see" data-composition-src="compositions/see.html" data-start="15.1000" data-duration="6.6647" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="depth" data-composition-id="depth" data-composition-src="compositions/depth.html" data-start="22.0000" data-duration="4.5313" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="endcard" data-composition-id="endcard" data-composition-src="compositions/endcard.html" data-start="30.7000" data-duration="2.4980" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:6"></div>
+      <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="33.2000" data-track-index="9" data-volume="1"></audio>
     </div>
     <script>
       window.__timelines["main"] = gsap.timeline({ paused: true });
